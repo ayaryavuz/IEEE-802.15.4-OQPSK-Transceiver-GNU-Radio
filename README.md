@@ -22,7 +22,7 @@ Beyond the modulation theory, the practical implementation of a transceiver requ
   Hardware-Ready Insight: The architecture highlights the synchronization blocks (like the Mueller-Müller Clock Recovery), demonstrating how the system compensates for real-world timing drifts—a necessity for any SDR-to-Hardware implementation.
   ![Complete GNU Radio flowgraph](https://github.com/user-attachments/assets/db7e46f3-ae7f-4d1b-b3f8-39c46c47425a)
                                                                    
-                                                                     Complete GNU Radio flowgraph
+                                                                     
 
 Results and Analysis
 The implementation has been verified through both simulation (GNU Radio GUI) and hardware testing with HackRF One. The following results confirm the system's performance and compliance with IEEE 802.15.4 standards:
