@@ -16,6 +16,7 @@ In the IEEE 802.15.4 standard, OQPSK (Offset-QPSK) is preferred over standard QP
   3. Reduced Spectral Regrowth: When a signal with high amplitude fluctuations passes through a non-linear amplifier, it causes "spectral regrowth" (interfering with adjacent channels). OQPSK minimizes this effect, ensuring better spectral efficiency and compliance with strict RF regulations.
 
 System Architecture & Signal Flow
+
 Beyond the modulation theory, the practical implementation of a transceiver requires a robust architecture to handle timing, synchronization, and data integrity. Including the system architecture here serves several purposes:
   Design Transparency: It visualizes the end-to-end signal processing chain, from bit-level packetization to the final RF waveform generation.
   Engineering Rationale: It explains the placement of specific blocks, such as why the Delay block is positioned between "Complex to Float" and "Float to Complex" to achieve the precise T/2 offset required for OQPSK.
@@ -25,6 +26,7 @@ Beyond the modulation theory, the practical implementation of a transceiver requ
                                                                      
 
 Results and Analysis
+
 The implementation has been verified through both simulation (GNU Radio GUI) and hardware testing with HackRF One. The following results confirm the system's performance and compliance with IEEE 802.15.4 standards:
   1. Constellation Analysis: The OQPSK constellation exhibits the characteristic "offset" transitions, where phase changes do not pass through the origin.This confirms the successful T/2 delay implementation between the I and Q channels, resulting in a significantly lower Peak-to-Average Power Ratio (PAPR) compared to standard QPSK.
   2. Synchronization PerformanceThe Mueller-Müller Clock Recovery block successfully achieves timing lock even under noisy channel conditions.The receiver accurately decodes the Access Code (0xA7) defined in the IEEE standard, ensuring consistent packet synchronization.
